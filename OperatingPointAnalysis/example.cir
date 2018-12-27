@@ -1,0 +1,9 @@
+KCL and KVL ; Title Line
+V1 a gnd 30V ; V1 Voltage Source
+R1 a b   15  ; R1 Resistor
+R2 b gnd 30  ; R2 Resistor
+R3 b c   20  ; R3 Resistor
+R4 c gnd 10  ; R4 Resistor
+I1 c gnd 1   ; I1 Current Source
+.OP          ; Command for DC Analysis
+.END         ; End of the file
