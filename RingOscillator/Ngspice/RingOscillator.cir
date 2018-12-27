@@ -1,0 +1,4 @@
+Ring Oscillator Design
+
+.SUBCKT INVERTER  INPUT OUTPUT
+.ENDS INVERTER
