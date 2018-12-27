@@ -1,0 +1,4 @@
+Yapılan çalışmaların amacı aşağıdaki gibidir;
+- Ngspice üzerinde bir modelin nasıl eklenerek kullanıldığını öğrenmek
+- Ltspice ve Ngspice programlarını aynı devre üzerinde sonuçlar bakımından karşılaştırmak
+- Hesaplama süre ölçümü yapmak
