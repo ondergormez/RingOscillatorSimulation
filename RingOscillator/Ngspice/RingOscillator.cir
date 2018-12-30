@@ -5,4 +5,13 @@ M1 OUT IN VDD  VDD  MOSP
 M2 OUT IN DGND DGND MOSN
 .ENDS INVERTER
 
+.control
+echo ******************************************
+echo *** Ring Oscillator Simulation Started ***
+echo ******************************************
+run
+echo *******************************************
+echo *** Ring Oscillator Simulation Finished ***
+echo *******************************************
+.endc
 .END         ; End of the file
