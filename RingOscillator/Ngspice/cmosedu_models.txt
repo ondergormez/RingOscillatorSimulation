@@ -28,7 +28,7 @@
 * Short channel models from CMOS Circuit Design, Layout, and Simulation,
 * 50nm BSIM4 models VDD=1V, see CMOSedu.com
 *
-.model  N_50n  nmos  level = 54
+.model  N_50n  nmos  level = 54 VERSION=4.7
 +binunit = 1            paramchk= 1            mobmod  = 0          
 +capmod  = 2            igcmod  = 1            igbmod  = 1            geomod  = 0          
 +diomod  = 1            rdsmod  = 0            rbodymod= 1            rgatemod= 1          
@@ -87,7 +87,7 @@
 +rshg    = 0.4          gbmin   = 1e-010       rbpb    = 5            rbpd    = 15         
 +rbps    = 15           rbdb    = 15           rbsb    = 15           ngcon   = 1
 *
-.model  P_50n  pmos  level = 54
+.model  P_50n  pmos  level = 54 VERSION=4.7
 +binunit = 1            paramchk= 1            mobmod  = 0          
 +capmod  = 2            igcmod  = 1            igbmod  = 1            geomod  = 0          
 +diomod  = 1            rdsmod  = 0            rbodymod= 1            rgatemod= 1          
