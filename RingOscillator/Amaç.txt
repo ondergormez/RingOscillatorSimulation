@@ -1,4 +1,8 @@
 Yapılan çalışmaların amacı aşağıdaki gibidir;
 - Ngspice üzerinde bir modelin nasıl eklenerek kullanıldığını öğrenmek
 - Ltspice ve Ngspice programlarını aynı devre üzerinde sonuçlar bakımından karşılaştırmak
-- Hesaplama süre ölçümü yapmak
+
+Kaynaklar
+- http://ngspice.sourceforge.net/docs/ngspice-manual.pdf
+	- Chapter 11 MOSFETs
+- ngspice help documentation
