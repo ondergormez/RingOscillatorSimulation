@@ -40,7 +40,7 @@ echo *** Ring Oscillator Simulation Started ***
 echo ******************************************
 run
 *print V(IN01)
-plot V(IN01)
+gnuplot RingOscillator V(IN01) title "Ring Oscillator Output" xlabel "Time (s)" ylabel "Voltage (V)"
 echo *******************************************
 echo *** Ring Oscillator Simulation Finished ***
 echo *******************************************
