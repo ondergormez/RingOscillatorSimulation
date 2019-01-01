@@ -1,0 +1,27 @@
+
+
+MOSFETs
+
+Mosfetlerin ngspice da kullanımları kısaca aşağıdaki gibidir.
+MXX nd ng ns nb mname <l=val> <w=val>
+M01 2  17 6  10 MOSN   L=5U    W=2U
+M23 2  9  3  0  MOSP   L=10U   W=5U
+Mosfet modelleri kullanılarak oluşturulan mosfetlerin isimleri her zaman "M" ile başlamalıdır. Zorunlu olmayan ve ngspice ın default değerleri ile kullanmasını istemediğimiz MOS transistör parametrelerini "<XX=val>" şeklinde belirtiriz. "U" micron (10e-6) anlamindadir. "P" micronun karesidir (10e-12).
+Parametrelerin anlamları aşağıdaki gibidir;
+    - nd: drain node
+    - ng: gate node
+    - ns: source node 
+    - nb: bulk (substrate) node
+    -  l: channel length
+    -  w: channel width
+Bizim kullandığımız transistörlerde nb ile ns birbirine kısa devredir.
+
+
+Mos modelleri aşağıdaki gibi ifade edilir.
+.model MOSN NMOS level=8 version=3.3.0
+Model parametrelerinin anlamları aşağıdaki gibidir;
+    - MOSN: Modelin kullanıldığı dosyadaki model ismini belirtir.
+    - NMOS: Modelde bulunan n-channel bir transistörün kullanılacağını belirtir. p-channel için PMOS girilmelidir.
+    - level ve version spesifik bir mos transistör modelinin seçilmesini sağlamaktadır.
+
+Oluşturulan sub circuit lerin kullanılabilmesi için instancelar "X" ile başlatılmalıdır.
