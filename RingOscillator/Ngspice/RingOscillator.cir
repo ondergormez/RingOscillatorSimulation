@@ -1,7 +1,7 @@
 Ring Oscillator Design
 
 
-VDD NVDD GND DC 5
+VDD NVDD GND DC 1
 
 .SUBCKT INVERTER IN OUT VDD DGND                                                ;Inverter Sub circuit
 .include cmosedu_models.txt
@@ -29,17 +29,18 @@ X17 IN17 IN01 NVDD GND INVERTER
 
 .OPTIONS GMIN=1e-012 ABSTOL=1e-012 RELTOL=0.001 CHGTOL=1e-014 TRTOL=1 VOLTTOL=1e-006 SSTOL=0.001 MINDELTAGMIN=0.0001 METHOD=trap ACCT LIST NODE OPTS
 
-.IC V(NVDD)=5 V(IN01)=5
-*.NODESET V(NVDD)=5 V(IN01)=5
-
-*.TRAN 0 1 0 20us UIC                                                            ; No. of Data Rows : 50013
-.TRAN 0 1 0  1ms UIC                                                            ; No. of Data Rows : 1013
+*.NODESET V(NVDD)=1 V(IN01)=0.71
+*.IC V(NVDD)=1 V(IN01)=0.71
+*.TRAN 0 20us 0  20us UIC                                                        ; No. of Data Rows : 4051
+.TRAN 0 20us 0  20us                                                            ; No. of Data Rows : 4003
 
 .control
 echo ******************************************
 echo *** Ring Oscillator Simulation Started ***
 echo ******************************************
 run
+*print V(IN01)
+plot V(IN01)
 echo *******************************************
 echo *** Ring Oscillator Simulation Finished ***
 echo *******************************************
