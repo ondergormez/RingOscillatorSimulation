@@ -30,6 +30,7 @@ X17 IN17 IN01 NVDD GND INVERTER
 .OPTIONS GMIN=1e-012 ABSTOL=1e-012 RELTOL=0.001 CHGTOL=1e-014 TRTOL=1 VOLTTOL=1e-006 SSTOL=0.001 MINDELTAGMIN=0.0001 METHOD=trap ACCT LIST NODE OPTS
 
 .IC V(NVDD)=5 V(IN01)=5
+*.NODESET V(NVDD)=5 V(IN01)=5
 
 *.tran 0 1 0 20us UIC                                                            ; No. of Data Rows : 50013
 .tran 0 1 0  1ms UIC                                                            ; No. of Data Rows : 1013
