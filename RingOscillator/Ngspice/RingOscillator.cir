@@ -39,6 +39,18 @@ X16 IN16    IN17    NVDD GND INVERTER
 X17 IN17    Osc_Out NVDD GND INVERTER
 
 *
+* Ring oscillator circuit consisting
+* of 17 inverters.
+*
+*X01 Osc_Out IN02    NVDD GND INVERTER
+*X02 IN02    IN03    NVDD GND INVERTER
+*X03 IN03    IN04    NVDD GND INVERTER
+*X04 IN04    IN05    NVDD GND INVERTER
+*X05 IN05    IN06    NVDD GND INVERTER
+*X06 IN06    IN07    NVDD GND INVERTER
+*X07 IN07    Osc_Out NVDD GND INVERTER
+
+*
 * The following features must be set for the Ngspice simulation
 * to have the same properties as LTSpice simulation.
 *
