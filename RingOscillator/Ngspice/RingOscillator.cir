@@ -4,6 +4,7 @@ Ring Oscillator Design
 * Independent Voltage Source
 *
 VDD NVDD GND DC 1
+*VDD NVDD GND DC 0.88
 
 *
 * Inverter Sub Circuit Definition
