@@ -1,6 +1,5 @@
 Ring Oscillator Design
 
-
 VDD NVDD GND DC 1
 
 .SUBCKT INVERTER IN OUT VDD DGND                                                ;Inverter Sub circuit
@@ -9,28 +8,28 @@ M1 OUT IN VDD  VDD  P_50n    ;M1 OUT IN VDD  VDD  MOSP
 M2 OUT IN DGND DGND N_50n    ;M2 OUT IN DGND DGND MOSN
 .ENDS INVERTER
 
-X01 IN01 IN02 NVDD GND INVERTER                                                ;TODO: Change NVDD to VDD and observe the simulation result!
-X02 IN02 IN03 NVDD GND INVERTER
-X03 IN03 IN04 NVDD GND INVERTER
-X04 IN04 IN05 NVDD GND INVERTER
-X05 IN05 IN06 NVDD GND INVERTER
-X06 IN06 IN07 NVDD GND INVERTER
-X07 IN07 IN08 NVDD GND INVERTER
-X08 IN08 IN09 NVDD GND INVERTER
-X09 IN09 IN10 NVDD GND INVERTER
-X10 IN10 IN11 NVDD GND INVERTER
-X11 IN11 IN12 NVDD GND INVERTER
-X12 IN12 IN13 NVDD GND INVERTER
-X13 IN13 IN14 NVDD GND INVERTER
-X14 IN14 IN15 NVDD GND INVERTER
-X15 IN15 IN16 NVDD GND INVERTER
-X16 IN16 IN17 NVDD GND INVERTER
-X17 IN17 IN01 NVDD GND INVERTER
+X01 Osc_Out IN02    NVDD GND INVERTER                                           ;TODO: Change NVDD to VDD and observe the simulation result!
+X02 IN02    IN03    NVDD GND INVERTER
+X03 IN03    IN04    NVDD GND INVERTER
+X04 IN04    IN05    NVDD GND INVERTER
+X05 IN05    IN06    NVDD GND INVERTER
+X06 IN06    IN07    NVDD GND INVERTER
+X07 IN07    IN08    NVDD GND INVERTER
+X08 IN08    IN09    NVDD GND INVERTER
+X09 IN09    IN10    NVDD GND INVERTER
+X10 IN10    IN11    NVDD GND INVERTER
+X11 IN11    IN12    NVDD GND INVERTER
+X12 IN12    IN13    NVDD GND INVERTER
+X13 IN13    IN14    NVDD GND INVERTER
+X14 IN14    IN15    NVDD GND INVERTER
+X15 IN15    IN16    NVDD GND INVERTER
+X16 IN16    IN17    NVDD GND INVERTER
+X17 IN17    Osc_Out NVDD GND INVERTER
 
 .OPTIONS GMIN=1e-012 ABSTOL=1e-012 RELTOL=0.001 CHGTOL=1e-014 TRTOL=1 VOLTTOL=1e-006 SSTOL=0.001 MINDELTAGMIN=0.0001 METHOD=trap ACCT LIST NODE OPTS
 
-*.NODESET V(NVDD)=1 V(IN01)=0.71
-*.IC V(NVDD)=1 V(IN01)=0.71
+*.NODESET V(NVDD)=1 V(Osc_Out)=0.71
+*.IC V(NVDD)=1 V(Osc_Out)=0.71
 *.TRAN 0 20us 0  20us UIC                                                        ; No. of Data Rows : 4051
 .TRAN 0 20us 0  20us                                                            ; No. of Data Rows : 4003
 
@@ -39,10 +38,11 @@ echo ******************************************
 echo *** Ring Oscillator Simulation Started ***
 echo ******************************************
 run
-*print V(IN01)
-gnuplot RingOscillator V(IN01) title "Ring Oscillator Output" xlabel "Time (s)" ylabel "Voltage (V)"
+*print V(Osc_Out)
+gnuplot RingOscillator V(Osc_Out) title "Ring Oscillator Output" xlabel "Time (s)" ylabel "Voltage (V)"
 echo *******************************************
 echo *** Ring Oscillator Simulation Finished ***
 echo *******************************************
 .endc
-.END         ; End of the file
+
+.END                                                                            ; End of the file
